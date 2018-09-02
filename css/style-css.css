@@ -41,3 +41,33 @@
       font-weight: 600;
       text-transform: uppercase;
   }
+
+
+  /*==================================================
+                      Generic
+  ====================================================*/
+
+  @media (min-width: 992px) {
+    body {
+        padding-top: 0;
+        padding-left: 17rem;
+    }
+}
+
+h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+    font-family: 'Saira Extra Condensed', serif;
+    font-weight: 700;
+}
+/*==================================================
+                    about
+====================================================*/
+#about {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+    background-image: url(../img/about_bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
