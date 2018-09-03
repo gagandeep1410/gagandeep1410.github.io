@@ -2,20 +2,25 @@
 <head>
 <meta charset='utf-8'/>
 <!-- Latest compiled and minified CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <!-- Latest compiled JavaScript for Bootstrap-->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <!-- jQuery library -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <!-- fontawesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!--Style CSS -->
 <link href="css/style-css.css" rel="stylesheet">
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<!--Custom.js -->
+<script src="../js/custom.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNavbar">
     <a class="navbar-brand" href="#page-top">
-      <span class="d-none d-lg-block">
+        <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/nav-profile.jpg" alt="nav-profile-pic">
       </span>
     </a>
@@ -28,13 +33,13 @@
               <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
+              <a class="nav-link" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
+              <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#awards">Awards</a>
@@ -46,10 +51,10 @@
   </div>
 </nav>
 <div class="container-fluid p-0">
-<section class="p-3 p-lg-5" id="about">
+<section class="display p-3 p-lg-5" id="about">
   <div class="my-auto">
     <img src="img/profile-Icon.png" class="img-fluid mb-3" alt="profile-text">
-    <h1 class="mb-0">Gagandeep
+    <h1 class="mb-1">Gagandeep
       <span class="text-primary">Singh
       </span>
     </h1>
@@ -67,10 +72,10 @@
     </a>
       </li>
       <li class="list-inline-item">
-          <a href="#">
+          <a href="https://www.instagram.com/gagandeep2828/">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
       </span>
     </a>
       </li>
@@ -93,11 +98,129 @@
   </ul>
 
 </section>
-<section class="" id="experience"></section>
-<section class="" id="portfolio"></section>
-<section class="" id="skills"></section>
-<section class="" id="awards"></section>
-<section class="" id="contact"></section>
+<section class="display p-3 p-lg-5" id="skills">
+    <div>
+      <canvas id="myChart"  width="300" height="100" style="position: relative;" ></canvas>
+    </div>
+    <hr>
+    <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-Java-tab" data-toggle="pill" href="#pills-Java" role="tab" aria-controls="pills-Java" aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-JavaScript-tab" data-toggle="pill" href="#pills-JavaScript" role="tab" aria-controls="pills-JavaScript" aria-selected="false">JavaScript (Angular.js + Node.js)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-Database-tab" data-toggle="pill" href="#pills-Database" role="tab" aria-controls="pills-Database" aria-selected="false">SQL Database (Oracle,Vertica,Teradata,MySQL)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-markup-tab" data-toggle="pill" href="#pills-markup" role="tab" aria-controls="pills-markup" aria-selected="false">Markup(HTML&CSS)</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-Java" role="tabpanel" aria-labelledby="pills-Java-tab">
+      <h3>Java And Java Frameworks</h3>
+      <p style="font-size:1.2rem;">I have completed 6.12 Months(6 months from Infosys + 6 weeks from AlphaIT) of Industrial Training in Java Technologies, where I as in team have successfully developed Web application as well as Desktop application.
+        As the part of the Training we developed application using many frameworks and APIs such as Hibernate(Java) Framework, Spring Basic(Java) Framework and RESTful Web services. As a part to continue the learing experience
+      i have contributed to open source which can be found <a href="https://github.com/gagandeep1410"> here</a>. </p>
+    </div>
+      <div class="tab-pane fade" id="pills-JavaScript" role="tabpanel" aria-labelledby="pills-JavaScript-tab">
+        <h3>JavaScript</h3>
+          <p style="font-size:1.2rem;">As a part of Training project at Infosys, we made the frontend of web application reactive using AngularJS and Graph.js which is a JavaScript API used to design graphs.</p>
+         </div>
+      <div class="tab-pane fade" id="pills-Database" role="tabpanel" aria-labelledby="pills-Database-tab">
+        <h3>SQL DataBases</h3>
+          <p style="font-size:1.2rem;">I am currently working at Infosys, helping them with Unix and Database SQL Technologies such as Oracle and Teradata.
+        As MySQL was used in one of my Trainings, to gane more insite I am working on my Open Source project which uses Amazon Web Services such as EC2,Route 53,RDS and more.</p>
+      </div>
+      <div class="tab-pane fade" id="pills-markup" role="tabpanel" aria-labelledby="pills-markup-tab">
+        <h3>MarkUp Technologies</h3>
+          <p style="font-size:1.2rem;">As a part of my interest in Markup, I have developed many UI(including this) using HTML5,CSS3,JavaScript,AngularJS,jQuery Technologies.</p>
+        </div>
+    </div>
+    <hr>
+<script>
+  let ctx = document.getElementById('myChart').getContext('2d');
+  //labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015","2016","2017","2018"],
+  Chart.defaults.global.defaultFontFamily = 'Loto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#000000';
+  Chart.defaults.global.hover.axis = 'x';
+
+    let myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["JavaScript","MARKUP(HTML&CSS)","Java","Oracle","Unix"],
+        datasets: [{
+          label: "Self Appointed",
+          data: [63,71,66,75,72],
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }],
+      },
+      options: {
+        scales: {
+           yAxes: [{
+              ticks: {
+                 beginAtZero:true
+               },
+               gridLines: {
+                offsetGridLines: false
+              },
+             }]
+           },
+        legend: {
+            display:true,
+            position:'top',
+        labels: {
+            fontColor:'#000000'
+           }
+         },
+      layout:{
+        padding:{
+          left:0,
+          right:0,
+          bottom:0,
+          top:0
+          }
+        },
+        title:{
+          display:true,
+          text:'Skill Graph',
+          fontSize:35
+        },
+        tooltips: {
+          bodyFontColor:'#fff',
+          enabled: true,
+          borderWidth:10,
+          displayColors:'#fff',
+          borderColor:'true',
+          titleFontSize:40,
+        },
+        showLines: true,
+        hover: {
+        animationDuration: 0, // duration of animations when hovering an items
+     },
+      }
+    });
+
+</script>
+</section>
+<section class="display" id="portfolio"></section>
+<section class="display" id="experience"></section>
+<section class="display" id="awards"></section>
+<section class="display" id="contact"></section>
 </div>
 
 </body>
