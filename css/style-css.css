@@ -71,3 +71,15 @@ h1 {
     background-position: center center;
     background-repeat: no-repeat;
 }
+.trigger{
+border: 4px solid #000;
+max-width: 29%;
+
+}
+
+.trigger:hover .move{
+  transform: translate(120%,0%);
+}
+.move {
+  transition: transform 300ms ease-in-out;
+}
