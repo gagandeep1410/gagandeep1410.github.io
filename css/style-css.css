@@ -92,3 +92,18 @@ h1 {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+
+#contact{
+  background-image: url(../img/contactBg.jpg) !important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#contactImage{
+  max-width: 50%;
+  max-height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
