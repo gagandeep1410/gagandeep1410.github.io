@@ -216,3 +216,16 @@ time {
       font-weight: bold;
     }
 }
+#contact{
+  background: url(../img/contactBgd.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#contactImage{
+  max-width: 50%;
+  max-height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
