@@ -1,21 +1,27 @@
 <html>
 <head>
 <meta charset='utf-8'/>
+<meta name="viewport" content="">
 <!-- Latest compiled and minified CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <!-- Latest compiled JavaScript for Bootstrap-->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <!-- jQuery library -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <!-- fontawesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!--Style CSS -->
 <link href="css/style-css.css" rel="stylesheet">
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<!--Custom.js -->
+<script src="../js/custom.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNavbar">
     <a class="navbar-brand" href="#page-top">
-      <span class="d-none d-lg-block">
+        <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/nav-profile.jpg" alt="nav-profile-pic">
       </span>
     </a>
@@ -28,13 +34,13 @@
               <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
+              <a class="nav-link" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
+              <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#awards">Awards</a>
@@ -46,12 +52,17 @@
   </div>
 </nav>
 <div class="container-fluid p-0">
+
 <section class="p-3 p-lg-5" id="about">
     <div class="trigger">
       <img src="img/profile-Icon.png" class="img-fluid mb-3 move" alt="profile-text">
     </div>
     <div class="my-auto">
     <h1 class="mb-0">Gagandeep
+<section class="display p-3 p-lg-5" id="about">
+  <div class="my-auto">
+    <img src="img/profile-Icon.png" class="img-fluid mb-3" alt="profile-text">
+    <h1 class="mb-1">Gagandeep
       <span class="text-primary">Singh
       </span>
     </h1>
@@ -69,10 +80,10 @@
     </a>
       </li>
       <li class="list-inline-item">
-          <a href="#">
+          <a href="https://www.instagram.com/gagandeep2828/">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
       </span>
     </a>
       </li>
@@ -95,11 +106,294 @@
   </ul>
 
 </section>
-<section class="" id="experience"></section>
-<section class="" id="portfolio"></section>
-<section class="" id="skills"></section>
-<section class="" id="awards"></section>
-<section class="" id="contact"></section>
+<section class="display p-3 p-lg-5" id="skills">
+    <div>
+      <canvas id="myChart"  width="300" height="100" style="position: relative;" ></canvas>
+    </div>
+    <hr>
+    <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-Java-tab" data-toggle="pill" href="#pills-Java" role="tab" aria-controls="pills-Java" aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-JavaScript-tab" data-toggle="pill" href="#pills-JavaScript" role="tab" aria-controls="pills-JavaScript" aria-selected="false">JavaScript (Angular.js + Node.js)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-Database-tab" data-toggle="pill" href="#pills-Database" role="tab" aria-controls="pills-Database" aria-selected="false">SQL Database (Oracle,Vertica,Teradata,MySQL)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-markup-tab" data-toggle="pill" href="#pills-markup" role="tab" aria-controls="pills-markup" aria-selected="false">Markup(HTML&CSS)</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-Java" role="tabpanel" aria-labelledby="pills-Java-tab">
+      <h3>Java And Java Frameworks</h3>
+      <p style="font-size:1.2rem;">I have completed 6.12 Months(6 months from Infosys + 6 weeks from AlphaIT) of Industrial Training in Java Technologies, where I as in team have successfully developed Web application as well as Desktop application.
+        As the part of the Training we developed application using many frameworks and APIs such as Hibernate(Java) Framework, Spring Basic(Java) Framework and RESTful Web services. As a part to continue the learing experience
+      i have contributed to open source which can be found <a href="https://github.com/gagandeep1410"> here</a>. </p>
+    </div>
+      <div class="tab-pane fade" id="pills-JavaScript" role="tabpanel" aria-labelledby="pills-JavaScript-tab">
+        <h3>JavaScript</h3>
+          <p style="font-size:1.2rem;">As a part of Training project at Infosys, we made the frontend of web application reactive using AngularJS and Graph.js which is a JavaScript API used to design graphs.</p>
+         </div>
+      <div class="tab-pane fade" id="pills-Database" role="tabpanel" aria-labelledby="pills-Database-tab">
+        <h3>SQL DataBases</h3>
+          <p style="font-size:1.2rem;">I am currently working at Infosys, helping them with Unix and Database SQL Technologies such as Oracle and Teradata.
+        As MySQL was used in one of my Trainings, to gane more insite I am working on my Open Source project which uses Amazon Web Services such as EC2,Route 53,RDS and more.</p>
+      </div>
+      <div class="tab-pane fade" id="pills-markup" role="tabpanel" aria-labelledby="pills-markup-tab">
+        <h3>MarkUp Technologies</h3>
+          <p style="font-size:1.2rem;">As a part of my interest in Markup, I have developed many UI(including this) using HTML5,CSS3,JavaScript,AngularJS,jQuery Technologies.</p>
+        </div>
+    </div>
+    <hr>
+<script>
+  let ctx = document.getElementById('myChart').getContext('2d');
+  //labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015","2016","2017","2018"],
+  Chart.defaults.global.defaultFontFamily = 'Loto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#000000';
+  Chart.defaults.global.hover.axis = 'x';
+
+    let myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["JavaScript","MARKUP(HTML&CSS)","Java","Oracle","Unix"],
+        datasets: [{
+          label: "Self Appointed",
+          data: [63,71,66,75,72],
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }],
+      },
+      options: {
+        scales: {
+           yAxes: [{
+              ticks: {
+                 beginAtZero:true
+               },
+               gridLines: {
+                offsetGridLines: false
+              },
+             }]
+           },
+        legend: {
+            display:true,
+            position:'top',
+        labels: {
+            fontColor:'#000000'
+           }
+         },
+      layout:{
+        padding:{
+          left:0,
+          right:0,
+          bottom:0,
+          top:0
+          }
+        },
+        title:{
+          display:true,
+          text:'Skill Graph',
+          fontSize:35
+        },
+        tooltips: {
+          bodyFontColor:'#fff',
+          enabled: true,
+          borderWidth:10,
+          displayColors:'#fff',
+          borderColor:'true',
+          titleFontSize:40,
+        },
+        showLines: true,
+        hover: {
+        animationDuration: 0, // duration of animations when hovering an items
+     },
+      }
+    });
+
+</script>
+</section>
+<section class="display" id="portfolio"></section>
+<section class="display" id="experience">
+  <header class="" style="background-color: lightblue;border: 4px solid #000">
+    <h3 class="text-center display-4">Experience Timeline</h3>
+  </header>
+  <div class="" id="timeline">
+    <div class="container">
+      <div class="tl-block">
+        <div class="tl-year">
+          <div>2011</div>
+        </div><!-- tl-year -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventl">
+            <div>
+              <h3><time datetime="2011-03-21 11:00">March 21</time> 10th completed</h3>
+              <p>Time when I completed 10th from CBSE Board</p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-year">
+          <div>2013</div>
+        </div><!-- tl-year -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventr">
+            <div>
+              <h3><time datetime="2013-03-30 11:00">March 30</time> 12th completed</h3>
+              <p>Time when I completed 12th from CBSE Board</p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-year">
+          <div>2015</div>
+        </div><!-- tl-year -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventl">
+            <div>
+              <h3><time datetime="2010-07-18 11:00">July 18</time> Industrial Training at AlphaIT</h3>
+              <p>The six week summer internship has been completed at Alpha Net Technologies Pvt. Ltd, Chandigarh. During this internship I successfully developed the project “Adzone” using Java technologies like Java Core, MySQL Database Server. </p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventr">
+            <div>
+              <h3><time datetime="2010-07-20 11:00">July 20</time> Industrial Training at CDAC</h3>
+              <p>The six week summer internship has been completed at the Centre for Development of Advanced Computing, Mohali, during which I studied the programming language, Android. I, then, successfully designed an android application named, “Fizzle Bomber” along with another trainee.</p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-year">
+          <div>2016</div>
+        </div><!-- tl-year -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventl">
+            <div>
+              <h3><time datetime="2016-08-30 11:00">July 20</time> Industrial Training at SLR</h3>
+              <p>Completed my 2nd project, 6 week Industrial training in Android from SLR.</p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-year">
+          <div>2017</div>
+        </div><!-- tl-year -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventr">
+            <div>
+              <h3><time datetime="2017-01-30 11:00">Jan 30</time> Training At Infosys Limited.</h3>
+              <p>Hardcore 4 months of training in technologies such as Java core, Basics of Js and programming fundamentals using python.
+                Many Frameworks like AngularJS, bootstrap, Hibernate were also used in real world like project, where techniques like Agile was used. </p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventl">
+            <div>
+              <h3><time datetime="2017-07-30 11:00">July 30</time> Graduation</h3>
+              <p>Completed my B.tech in Computer Science from UCoE</p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+      <div class="tl-block">
+        <div class="tl-event">
+          <div class="eventr">
+            <div>
+              <h3><time datetime="2017-08-21 11:00">Aug 21</time> Infosys Limited</h3>
+              <p>From Aug 2017, I am working as System Engineer at Infosys.</p>
+            </div>
+          </div>
+        </div><!-- tl-event -->
+      </div><!-- tl-block -->
+    </div><!-- container-->
+  </div><!-- timline  -->
+</section>
+<section class="display" id="awards"></section>
+<section class="display" id="contact">
+<div class="container-fluid">
+  <div class="row my-auto">
+      <div class="container display-4 col-lg-6" style=" margin: auto; ">
+        <img id="contactImage"class="my-auto rounded-circle center-block" src="../img/nav-profile.jpg" alt="" >
+        <p class="text-white text-center" style="font-family: 'Saira Extra Condensed', serif;font-variant: small-caps;">Gagandeep Singh</p>
+        <h2 class="text-white text-center" style="font-family: 'Text Me One',sans-serif;">Enthusiastic Programmer</h2>
+        <div class="">
+          <p style="text-align: center;">
+              <span class="fa" style="">
+                <a href="https://www.facebook.com/Gagandeep2828"><i class="text-white fab fa-facebook"></i></a></span>
+              <span class="fa" style="">
+                <a href="https://twitter.com/Gagandeep1410"><i class="text-white fab fa-twitter"></i></a></span>
+              <span class="fa" style="">
+                <a href="https://www.instagram.com/gagandeep2828/"><i class="text-white fab fa-instagram"></i></a></span>
+              <span class="fa" style="">
+                <a href="https://linkedin.com/in/gagandeep-singh-065916b5"><i class="text-white fab fa-linkedin"></i></a></span>
+              <span class="fa" style="">
+                <a href="http://gagandeep1410.github.io/"><i class="text-white fab fa-github"></i></a></span>
+                <p>
+        </div>
+        <h3 class="text-white text-center"style="font-weight:bold;padding-top: 2rem;">Copyright (c) 2018 Gagandeep Singh</h3>
+      </div>
+      <div class="col-lg-6 my-auto display-4">
+        <h1 class="text-center" style="font-size:.8em;">Career Goal</h1>
+        <p class="text-white" style="text-align: justify;font-size:.5em;padding-bottom: 2rem;">I want to succeed as a software developer in a stimulating and challenging environment, building the success of the company while I experience advancement opportunities, with my perseverance and hard work.</p>
+        <div style="border-top: 3px solid #000;padding-bottom: 3rem;"></div>
+        <ul class="list-unstyled" style="font-size: 1.6rem;font-family:'Text Me One',sans-serif;">
+          <li style="font-weight: bold;display:inline-block;margin: auto;">DOB</li>
+          <li class="text-white"style="display:inline-block;margin: auto;">- 14:10:1995</li>
+          <div></div>
+          <li style="font-weight: bold;display:inline-block;">Address</li>
+          <li class="text-white" style="display:inline-block;">- #320 Sector59, Mohali, Punjab, India</li>
+          <div></div>
+          <li style="display:inline-block;font-weight: bold;">Phone</li>
+          <li class="text-white" style="display:inline-block;">- 9417356729</li>
+          <div></div>
+          <li style="display:inline-block;font-weight: bold;">Email</li>
+          <li class="text-white" style="display:inline-block;">- <a class="text-white" href="mailto:gagandeepsingh1410@gmail.com?subject=Offer">gagandeepsingh1410@gmail.com</a></li>
+          <div></div>
+          <li style="display:inline-block;font-weight: bold;">Website</li>
+          <li class="text-white" style="display:inline-block;">- <a class="text-white" href="https://gagandeep1410.github.io/">Portfolio<a/></li>
+          <div></div>
+          <li style="font-weight: bold;display:inline-block;">Experience</li>
+          <li class="text-white" style="display:inline-block;">- System Engineer at Infosys (2017 - present)</li>
+      </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
 </div>
 
 </body>
