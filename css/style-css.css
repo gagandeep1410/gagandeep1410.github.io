@@ -46,6 +46,12 @@
   /*==================================================
                       Generic
   ====================================================*/
+
+  @media (min-width: 992px) {
+    #about {
+    background-image: url(../img/about_bg_media.jpg);
+    }
+  }
   @media (min-width: 992px) {
     body {
         padding-top: 0;
@@ -89,7 +95,7 @@ h1 {
     padding-bottom: 7rem !important;
     background-image: url(../img/about_bg.jpg);
     background-size: cover;
-    background-position: center center;
+    background-position: center right;
     background-repeat: no-repeat;
 }
 
@@ -111,7 +117,7 @@ h1 {
 #timeline {
   /*1b4294*/
     background: url(../img/line.png) repeat-y 50% 0;
-    margin: 20px 0 20px 0;
+    /*margin: 20px 0 20px 0;*/
 }
 .tl-block {
   position: relative;
@@ -183,26 +189,27 @@ time {
 }
 .event div h3 {
   font-weight: bold;
-}
+}/*
 @media (max-width:992px) {
   header{
-    height: 50px;
+    height: 40px;
   }
   #timeline {
-    background: url(../img/line.png) repeat-y 109px 0;
+    background: url(../img/line.png) repeat-y 10px 0;
+    margin: auto;
   }
   .tl-year{
-    background: url(../img/big.png) no-repeat 8px 0;
+    background: url(../img/big.png) no-repeat 50% 0;
     text-align: left;
-    margin: 0;
+    margin-left: 0
   }
   .tl-event {
-    background: url(../img/small.png) no-repeat 16px 0;
-
+    background: url(../img/small.png) no-repeat 3% 0;
   }
   .tl-event div{
     width:85%;
     position: relative;
+
   }
   .tl-event div.eventl{
     background: url(../img/ArrowL.png) no-repeat 0 0;
@@ -215,8 +222,12 @@ time {
     .event div h3 {
       font-weight: bold;
     }
+}*/
 
+#expHead {
+  background-color: lightblue;
 }
+
 #contact{
   background-image: url(../img/contactBg.jpg) !important;
   background-size: cover;
